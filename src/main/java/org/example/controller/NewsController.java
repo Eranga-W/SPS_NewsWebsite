@@ -1,10 +1,12 @@
 package org.example.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.example.dto.News;
 import org.example.service.NewsService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/news-controller")
@@ -12,5 +14,17 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 public class NewsController {
     final NewsService service;
+
+    @PostMapping("/add-news")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void addNews(@RequestBody News news){
+        service.addNews(news);
+    }
+
+    @GetMapping("/get-all")
+    public List<News> getAll(){
+        return service.getAll();
+    }
+
 
 }
