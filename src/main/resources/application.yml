@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/news_db
+    username: root
+    password: era$1334239$
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
