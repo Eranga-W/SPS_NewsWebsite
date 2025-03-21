@@ -30,4 +30,11 @@ public class NewsServiceImpl implements NewsService{
         );
         return newsList;
     }
+
+    @Override
+    public void updateNews(News news) {
+        if (repository.findById(news.getId()).isPresent()){
+            repository.save(new ObjectMapper().convertValue(news,NewsEntity.class));
+        }
+    }
 }

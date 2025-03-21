@@ -26,5 +26,10 @@ public class NewsController {
         return service.getAll();
     }
 
+    @PostMapping("/update-employee")
+    public void updateNews(@RequestBody News news){
+        service.updateNews(news);
+    }
+
 
 }

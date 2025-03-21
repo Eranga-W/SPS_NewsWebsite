@@ -8,4 +8,6 @@ public interface NewsService {
     void addNews(News news);
 
     List<News> getAll();
+
+    void updateNews(News news);
 }
