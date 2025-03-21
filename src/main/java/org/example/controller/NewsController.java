@@ -26,10 +26,14 @@ public class NewsController {
         return service.getAll();
     }
 
-    @PostMapping("/update-employee")
+    @PostMapping("/update-news")
     public void updateNews(@RequestBody News news){
         service.updateNews(news);
     }
 
-
+    @DeleteMapping("/delete-news/{id}")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public void deleteNews(@PathVariable Long id){
+        service.deleteNewsById(id);
+    }
 }

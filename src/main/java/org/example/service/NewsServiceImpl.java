@@ -37,4 +37,11 @@ public class NewsServiceImpl implements NewsService{
             repository.save(new ObjectMapper().convertValue(news,NewsEntity.class));
         }
     }
+
+    @Override
+    public void deleteNewsById(Long id) {
+        if (repository.existsById(id)){
+            repository.deleteById(id);
+        }
+    }
 }

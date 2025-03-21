@@ -10,4 +10,6 @@ public interface NewsService {
     List<News> getAll();
 
     void updateNews(News news);
+
+    void deleteNewsById(Long id);
 }
